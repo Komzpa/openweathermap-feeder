@@ -9,7 +9,7 @@ readings += sensehat.pressure()
 
 
 def compact_readings(r):
-    dedup = defaultdict({})
+    dedup = defaultdict(dict)
     for reading in r:
         dedup[reading['dt']].update(reading)
     out = []
