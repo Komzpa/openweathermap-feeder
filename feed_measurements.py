@@ -8,3 +8,4 @@ def feed_measurement(data):
     print(req.status_code)
     print(req.headers)
     print(req.raw)
+    print(req.text)
