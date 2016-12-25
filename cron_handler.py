@@ -1,6 +1,7 @@
 import config
 import majordomo
 import sensehat
+from feed_measurements import feed_measurement
 from collections import defaultdict
 
 readings = majordomo.get_readings('TempSensor01.value', 'temperature', 'http://localhost/', '7d')
@@ -24,3 +25,4 @@ for r in readings:
     r['station_id'] = config.station_id
 
 print(readings)
+feed_measurement(readings)
