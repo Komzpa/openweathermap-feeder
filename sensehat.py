@@ -7,4 +7,4 @@ sense.clear()
 
 def pressure():
     pressure = sense.get_pressure()
-    return [{'dt': time.time(), 'pressure': pressure}]
+    return [{'dt': int(round(time.time())), 'pressure': pressure}]
