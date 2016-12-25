@@ -1,5 +1,6 @@
 import config
 import majordomo
+import sensehat
 from collections import defaultdict
 
 readings = majordomo.get_readings('TempSensor01.value', 'temperature', 'http://localhost/', '7d')
