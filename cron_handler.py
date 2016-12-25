@@ -4,8 +4,16 @@ import sensehat
 from feed_measurements import feed_measurement
 from collections import defaultdict
 
-readings = majordomo.get_readings('TempSensor01.value', 'temperature', 'http://localhost/', '7d')
-readings += majordomo.get_readings('HumSensor01.value', 'humidity', 'http://localhost/', '7d')
+readings = \
+    sorted(
+        majordomo.get_readings('TempSensor01.value', 'temperature', 'http://localhost/', '7d'),
+        key=lambda x: x['dt']
+    )[-1:]
+readings += \
+    sorted(
+        majordomo.get_readings('HumSensor01.value', 'humidity', 'http://localhost/', '7d'),
+        key=lambda x: x['dt']
+    )[-1:]
 readings += sensehat.pressure()
 
 
