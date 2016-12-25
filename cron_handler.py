@@ -4,7 +4,7 @@ import sensehat
 from collections import defaultdict
 
 readings = majordomo.get_readings('TempSensor01.value', 'temperature', 'http://localhost/', '7d')
-readings += majordomo.get_readings('HumSensor01.value', 'temperature', 'http://localhost/', '7d')
+readings += majordomo.get_readings('HumSensor01.value', 'humidity', 'http://localhost/', '7d')
 readings += sensehat.pressure()
 
 
